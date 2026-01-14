@@ -1,0 +1,2 @@
+# video-connector
+SONYのハンディカムやiPhoneで撮影した動画をFFmpegで素早く結合できるGUIツール
