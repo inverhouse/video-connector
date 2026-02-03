@@ -1,5 +1,5 @@
-import { useState, useCallback, useEffect } from 'react';
-import { VideoItem } from '@/types';
+import { useState, useCallback, useEffect, useMemo } from 'react';
+import { VideoItem, hasSourceMismatch } from '@/types';
 
 /**
  * 動画リストの状態管理フック
@@ -98,9 +98,15 @@ export function useVideos() {
     setOutputDir(null);
   }, []);
 
+  // iPhoneとハンディカムの動画が混在しているかチェック
+  const hasMixedSources = useMemo(() => {
+    return hasSourceMismatch(videos);
+  }, [videos]);
+
   return {
     videos,
     outputDir,
+    hasMixedSources,
     selectAndAddVideos,
     reorderVideos,
     removeVideo,

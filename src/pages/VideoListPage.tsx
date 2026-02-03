@@ -1,9 +1,12 @@
 import { VideoItem } from '@/types';
 import { Button } from '@/components/ui/button';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { AlertTriangle } from 'lucide-react';
 
 interface VideoListPageProps {
   videos: VideoItem[];
   outputDir: string | null;
+  hasMixedSources: boolean;
   onAddVideos: () => void;
   onReorderVideos: (newOrder: VideoItem[]) => void;
   onRemoveVideo: (id: string) => void;
@@ -18,6 +21,7 @@ interface VideoListPageProps {
 export function VideoListPage({
   videos,
   outputDir,
+  hasMixedSources,
   onAddVideos,
   onReorderVideos,
   onRemoveVideo,
@@ -34,6 +38,17 @@ export function VideoListPage({
           動画を追加する
         </Button>
       </header>
+
+      {/* 異なるソースの動画が混在している場合の警告 */}
+      {hasMixedSources && (
+        <Alert variant="default" className="border-amber-500 bg-amber-50 dark:bg-amber-950">
+          <AlertTriangle className="h-4 w-4 text-amber-500" />
+          <AlertDescription className="text-amber-700 dark:text-amber-300">
+            iPhoneで撮影した動画とビデオカメラで撮影した動画が混在しています。
+            フォーマットの変換が必要なため、通常より出力に時間がかかる場合があります。
+          </AlertDescription>
+        </Alert>
+      )}
 
       <main className="flex-1">
         {videos.length === 0 ? (

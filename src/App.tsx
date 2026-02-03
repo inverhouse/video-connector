@@ -11,6 +11,7 @@ function App() {
   const {
     videos,
     outputDir,
+    hasMixedSources,
     selectAndAddVideos,
     reorderVideos,
     removeVideo,
@@ -83,6 +84,7 @@ function App() {
         <VideoListPage
           videos={videos}
           outputDir={outputDir}
+          hasMixedSources={hasMixedSources}
           onAddVideos={handleAddVideosFromList}
           onReorderVideos={reorderVideos}
           onRemoveVideo={removeVideo}
