@@ -23,7 +23,6 @@ export function VideoListPage({
   outputDir,
   hasMixedSources,
   onAddVideos,
-  onReorderVideos,
   onRemoveVideo,
   onSelectOutputDir,
   onStartExport,
