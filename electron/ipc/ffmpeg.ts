@@ -95,9 +95,16 @@ async function convertVideo(
   return new Promise((resolve, reject) => {
     const args = [
       '-i', inputPath,
-      '-c:v', 'libx264',
-      '-c:a', 'aac',
-      '-vf', 'scale=1920:1080',
+      '-c:v', 'libx264',          // 映像コーデック: H.264
+      '-preset', 'medium',         // エンコード速度/品質バランス
+      '-crf', '18',                // 品質設定（低いほど高品質）
+      '-c:a', 'aac',               // 音声コーデック: AAC
+      '-b:a', '192k',              // 音声ビットレート
+      '-ar', '48000',              // サンプルレート: 48kHz
+      '-ac', '2',                  // ステレオ
+      '-map', '0:v:0',             // 最初の映像ストリームを選択
+      '-map', '0:a:0?',            // 最初の音声ストリームを選択（存在しなくてもOK）
+      '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2',
       '-r', '60',
       '-y',
       outputPath,
@@ -141,7 +148,11 @@ async function mergeVideos(
       '-f', 'concat',
       '-safe', '0',
       '-i', filelistPath,
-      '-c', 'copy',
+      '-c:v', 'copy',              // 映像はコピー（既に変換済み）
+      '-c:a', 'aac',               // 音声は再エンコード（互換性確保）
+      '-b:a', '192k',              // 音声ビットレート
+      '-ar', '48000',              // サンプルレート統一
+      '-ac', '2',                  // ステレオ統一
       '-y',
       outputPath,
     ];
