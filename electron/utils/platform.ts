@@ -34,10 +34,20 @@ function getFFmpegBasePath(): string {
 export function getFFmpegPath(): string {
   const basePath = getFFmpegBasePath();
   
-  if (isWindows()) {
-    return path.join(basePath, 'windows', 'ffmpeg.exe');
+  if (!app.isPackaged) {
+    // 開発時: mac/ or windows/ サブフォルダを含む
+    if (isWindows()) {
+      return path.join(basePath, 'windows', 'ffmpeg.exe');
+    } else {
+      return path.join(basePath, 'mac', 'ffmpeg');
+    }
   } else {
-    return path.join(basePath, 'mac', 'ffmpeg');
+    // 本番時: extraResourcesでフラットにコピーされる
+    if (isWindows()) {
+      return path.join(basePath, 'ffmpeg.exe');
+    } else {
+      return path.join(basePath, 'ffmpeg');
+    }
   }
 }
 
@@ -47,10 +57,20 @@ export function getFFmpegPath(): string {
 export function getFFprobePath(): string {
   const basePath = getFFmpegBasePath();
   
-  if (isWindows()) {
-    return path.join(basePath, 'windows', 'ffprobe.exe');
+  if (!app.isPackaged) {
+    // 開発時: mac/ or windows/ サブフォルダを含む
+    if (isWindows()) {
+      return path.join(basePath, 'windows', 'ffprobe.exe');
+    } else {
+      return path.join(basePath, 'mac', 'ffprobe');
+    }
   } else {
-    return path.join(basePath, 'mac', 'ffprobe');
+    // 本番時: extraResourcesでフラットにコピーされる
+    if (isWindows()) {
+      return path.join(basePath, 'ffprobe.exe');
+    } else {
+      return path.join(basePath, 'ffprobe');
+    }
   }
 }
 

@@ -2,7 +2,7 @@
   "name": "video-connector",
   "productName": "Video Connector",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "複数の動画ファイルを並べ替え・結合し、1080p/60fps/MP4で出力するデスクトップアプリ",
   "author": "Your Name",
   "type": "module",
