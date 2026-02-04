@@ -8,8 +8,9 @@
 
 | OS | ダウンロード |
 |---|---|
-| **macOS** | [📥 Video Connector-Mac-1.0.1-Installer.dmg](https://github.com/inverhouse/video-connector/releases/latest/download/Video.Connector-Mac-1.0.1-Installer.dmg) |
-| **Windows** | 準備中 |
+| **macOS (Apple Silicon)** | [📥 Video Connector-Mac-1.0.3-Installer.dmg](https://github.com/inverhouse/video-connector/releases/latest/download/Video.Connector-Mac-1.0.3-Installer.dmg) |
+
+> ⚠️ 現在はmacOS (Apple Silicon) 版のみ提供しています。Windows版は今後対応予定です。
 
 > 💡 上のリンクで404が出る場合は [Releases ページ](https://github.com/inverhouse/video-connector/releases) から直接ダウンロードしてください
 
@@ -47,3 +48,7 @@ npm run build
 ## ライセンス
 
 MIT License
+
+## 更新履歴
+
+詳細は [RELEASE_NOTES.md](RELEASE_NOTES.md) を参照してください。
