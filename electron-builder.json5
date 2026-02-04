@@ -22,6 +22,7 @@
     "target": [
       "dmg"
     ],
+    "icon": "resources/icon.icns",
     "artifactName": "${productName}-Mac-${version}-Installer.${ext}",
     "extraResources": [
       {
@@ -40,6 +41,7 @@
         ]
       }
     ],
+    "icon": "resources/icon.ico",
     "artifactName": "${productName}-Windows-${version}-Setup.${ext}",
     "extraResources": [
       {

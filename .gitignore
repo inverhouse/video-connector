@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-/LLM_prompt
+# Build output
+dist-electron/
+release/
