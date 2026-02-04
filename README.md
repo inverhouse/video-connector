@@ -8,8 +8,8 @@
 
 | OS | ダウンロード |
 |---|---|
-| **macOS** | [📥 Video Connector-Mac-1.0.0-Installer.dmg](https://github.com/inverhouse/video-connector/releases/latest/download/Video.Connector-Mac-1.0.0-Installer.dmg) |
-| **Windows** | [📥 Video Connector-Windows-1.0.0-Setup.exe](https://github.com/inverhouse/video-connector/releases/latest/download/Video.Connector-Windows-1.0.0-Setup.exe) |
+| **macOS** | [📥 Video Connector-Mac-1.0.1-Installer.dmg](https://github.com/inverhouse/video-connector/releases/latest/download/Video.Connector-Mac-1.0.1-Installer.dmg) |
+| **Windows** | 準備中 |
 
 > 💡 上のリンクで404が出る場合は [Releases ページ](https://github.com/inverhouse/video-connector/releases) から直接ダウンロードしてください
 
